@@ -71,6 +71,7 @@ public class BYGOverworldVegetationFeatures {
     public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> BEACH_GRASS = createPatchConfiguredFeature("beach_grass_patch", () -> BYGBlocks.BEACH_GRASS.get(), 32);
     public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> TALL_BEACH_GRASS_PATCH = createPatchConfiguredFeature("tall_beach_grass_patch", () -> BYGBlocks.TALL_BEACH_GRASS.get(), 32);
     public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> LEAF_PILE = createPatchConfiguredFeature("leaf_pile", () -> BYGBlocks.LEAF_PILE.get(), 15);
+    public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> MOSS_PILE = createPatchConfiguredFeature("moss_pile", () -> Blocks.MOSS_CARPET, 15);
     public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> RICHEA = createFlowerConfiguredFeature("richea", () -> BYGBlocks.RICHEA.get());
     public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PRAIRIE_GRASS_PATCH = createPatchConfiguredFeature("prairie_grass_patch", () -> BYGBlocks.PRAIRIE_GRASS.get(), 100);
     public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> TALL_PRAIRIE_GRASS_PATCH = createPatchConfiguredFeature("tall_prairie_grass_patch", () -> BYGBlocks.TALL_PRAIRIE_GRASS.get(), 100);

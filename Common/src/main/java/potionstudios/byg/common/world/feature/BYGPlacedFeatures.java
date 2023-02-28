@@ -80,6 +80,7 @@ public class BYGPlacedFeatures {
     public static final Holder<PlacedFeature> LUSH_CATTAIL = createPlacedFeature("lush_cattails", BYGOverworldVegetationFeatures.CATTAIL, () -> oceanFloorSquaredWithCountAndMaxDepth(16, OptionalInt.of(2)));
     public static final Holder<PlacedFeature> LEATHER_FLOWERS = createPlacedFeature("leather_flowers", BYGOverworldVegetationFeatures.LEATHER_FLOWERS, () -> worldSurfaceSquaredWithCount(2));
     public static final Holder<PlacedFeature> LEAF_PILES = createPlacedFeature("leaf_piles", BYGOverworldVegetationFeatures.LEAF_PILE, () -> worldSurfaceSquaredWithCount(2));
+    public static final Holder<PlacedFeature> MOSS_PILES = createPlacedFeature("moss_piles", BYGOverworldVegetationFeatures.MOSS_PILE, () -> worldSurfaceSquaredWithCount(2));
     public static final Holder<PlacedFeature> LOLLIPOP_FLOWERS = createPlacedFeature("lollipop_flowers", BYGOverworldVegetationFeatures.LOLLIPOP_FLOWER, () -> worldSurfaceSquaredWithCount(1));
     public static final Holder<PlacedFeature> CLOVER_FLOWERS = createPlacedFeature("clover_flower_patch", BYGOverworldVegetationFeatures.CLOVER_AND_FLOWERS, () -> worldSurfaceSquaredWithCount(2));
     public static final Holder<PlacedFeature> CRYPTIC_BRAMBLE = createPlacedFeature("cryptic_bramble", BYGEndVegetationFeatures.CRYPTIC_BRAMBLE_PATCH, () -> new ImmutableList.Builder<PlacementModifier>().addAll(worldSurfaceSquaredWithCount(2)).build());
@@ -234,7 +235,7 @@ public class BYGPlacedFeatures {
 
     public static final Holder<PlacedFeature> SPARSE_RED_OAK_TREES = createPlacedFeature("sparse_red_oak_trees", BYGOverworldTreeFeatures.RED_OAK_TREES, () -> clearingTreePlacement(PlacementUtils.countExtra(0, 0.2F, 1)));
 
-    public static final Holder<PlacedFeature> SPARSE_ANGELIC_TREES = createPlacedFeature("sparse_angelic_trees", BYGOverworldTreeFeatures.ANGELIC_TREES, () -> clearingTreePlacement(PlacementUtils.countExtra(0, 0.2F, 2)));
+    public static final Holder<PlacedFeature> ANGELIC_TREES = createPlacedFeature("angelic_trees", BYGOverworldTreeFeatures.ANGELIC_TREES, () -> clearingTreePlacement(PlacementUtils.countExtra(4, 0.2F, 3)));
 
 
     public static final Holder<PlacedFeature> SPARSE_JACARANDA_TREES = createPlacedFeature("sparse_jacaranda_trees", BYGOverworldTreeFeatures.JACARANDA_TREES, () -> clearingTreePlacement(PlacementUtils.countExtra(0, 0.2F, 2)));
@@ -245,6 +246,7 @@ public class BYGPlacedFeatures {
     public static final Holder<PlacedFeature> MOSSY_STONE_BOULDER = createPlacedFeature("mossy_stone_boulder", BYGOverworldFeatures.MOSSY_STONE_BOULDER, () -> CountPlacement.of(2), InSquarePlacement::spread, () -> PlacementUtils.HEIGHTMAP, BiomeFilter::biome);
     public static final Holder<PlacedFeature> BEEHIVES = createPlacedFeature("beehives", BYGOverworldFeatures.BEEHIVES, () -> CountPlacement.of(2), InSquarePlacement::spread, BiomeFilter::biome);
     public static final Holder<PlacedFeature> ROCKY_STONE_BOULDER = createPlacedFeature("rocky_stone_boulder", BYGOverworldFeatures.ROCKY_STONE_BOULDER, () -> CountPlacement.of(2), InSquarePlacement::spread, () -> PlacementUtils.HEIGHTMAP, BiomeFilter::biome);
+    public static final Holder<PlacedFeature> DACITE_BOULDER = createPlacedFeature("dacite_boulder", BYGOverworldFeatures.DACITE_BOULDER, () -> CountPlacement.of(1), InSquarePlacement::spread, () -> PlacementUtils.HEIGHTMAP, BiomeFilter::biome);
     public static final Holder<PlacedFeature> BLACKSTONE_BOULDER = createPlacedFeature("blackstone_boulder", BYGOverworldFeatures.BLACKSTONE_BOULDER, () -> CountPlacement.of(2), InSquarePlacement::spread, () -> PlacementUtils.HEIGHTMAP, BiomeFilter::biome);
     public static final Holder<PlacedFeature> ORANGE_TERRACOTTA_BOULDER = createPlacedFeature("orange_terracotta_boulder", BYGOverworldFeatures.ORANGE_TERRACOTTA_BOULDER, () -> CountPlacement.of(2), InSquarePlacement::spread, () -> PlacementUtils.HEIGHTMAP, BiomeFilter::biome);
     public static final Holder<PlacedFeature> BLACK_ICE_SNOW = createPlacedFeature("black_ice_snow", BYGOverworldFeatures.BLACK_ICE, () -> ChunkCoveringPlacement.INSTANCE, () -> PlacementUtils.HEIGHTMAP_WORLD_SURFACE, () -> RandomOffsetPlacement.vertical(ConstantInt.of(-1)), BiomeFilter::biome, () -> BlockPredicateFilter.forPredicate(BlockPredicate.matchesBlocks(BlockPos.ZERO, Blocks.WATER)), () -> BlockPredicateFilter.forPredicate(BlockPredicate.matchesBlocks(new BlockPos(0, 1, 0), Blocks.AIR)));

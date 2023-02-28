@@ -162,6 +162,10 @@ public class BYGDefaultBiomeFeatures {
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BYGPlacedFeatures.LEAF_PILES);
     }
 
+    public static void addMossPile(BiomeGenerationSettings.Builder gen) {
+        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BYGPlacedFeatures.MOSS_PILES);
+    }
+
     public static void addCloverFlowerPatch(BiomeGenerationSettings.Builder gen) {
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BYGPlacedFeatures.CLOVER_FLOWERS);
     }
@@ -178,11 +182,6 @@ public class BYGDefaultBiomeFeatures {
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BYGPlacedFeatures.WHITE_MANGROVE_SWAMP_WATER_VEGETATION);
     }
 
-    public static void addLilyPads(BiomeGenerationSettings.Builder gen) {
-        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BYGPlacedFeatures.TINY_LILY_PAD);
-        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BYGPlacedFeatures.LILY_PAD);
-    }
-
     public static void addWhiteMangroveSwampAdditionalVegetation(BiomeGenerationSettings.Builder builder) {
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BYGPlacedFeatures.OAK_TREES_SWAMP);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_SWAMP);
@@ -191,6 +190,12 @@ public class BYGDefaultBiomeFeatures {
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_WATERLILY);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.BROWN_MUSHROOM_SWAMP);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.RED_MUSHROOM_SWAMP);
+    }
+
+    public static void addWaterLily(BiomeGenerationSettings.Builder gen) {
+        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_WATERLILY);
+        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BYGPlacedFeatures.LILY_PAD);
+        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BYGPlacedFeatures.TINY_LILY_PAD);
     }
 
     public static void addHorseweed(BiomeGenerationSettings.Builder gen) {
@@ -371,6 +376,9 @@ public class BYGDefaultBiomeFeatures {
 
     public static void addRockyStoneBoulder(BiomeGenerationSettings.Builder gen) {
         gen.addFeature(GenerationStep.Decoration.RAW_GENERATION, BYGPlacedFeatures.ROCKY_STONE_BOULDER);
+    }
+    public static void addDaciteBoulder(BiomeGenerationSettings.Builder gen) {
+        gen.addFeature(GenerationStep.Decoration.RAW_GENERATION, BYGPlacedFeatures.DACITE_BOULDER);
     }
 
     public static void addGiantLunaRocks(BiomeGenerationSettings.Builder gen) {
@@ -669,8 +677,8 @@ public class BYGDefaultBiomeFeatures {
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BYGPlacedFeatures.JACARANDA_TREES);
     }
 
-    public static void addSparseAngelicTrees(BiomeGenerationSettings.Builder gen) {
-        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BYGPlacedFeatures.SPARSE_ANGELIC_TREES);
+    public static void addAngelicTrees(BiomeGenerationSettings.Builder gen) {
+        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BYGPlacedFeatures.ANGELIC_TREES);
     }
 
     public static void addPetunias(BiomeGenerationSettings.Builder gen) {

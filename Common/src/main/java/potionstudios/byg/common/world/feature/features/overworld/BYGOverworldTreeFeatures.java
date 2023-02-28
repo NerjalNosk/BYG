@@ -24,10 +24,7 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 import net.minecraft.world.level.levelgen.feature.stateproviders.RandomizedIntStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
-import net.minecraft.world.level.levelgen.feature.treedecorators.AttachedToLeavesDecorator;
-import net.minecraft.world.level.levelgen.feature.treedecorators.CocoaDecorator;
-import net.minecraft.world.level.levelgen.feature.treedecorators.LeaveVineDecorator;
-import net.minecraft.world.level.levelgen.feature.treedecorators.TrunkVineDecorator;
+import net.minecraft.world.level.levelgen.feature.treedecorators.*;
 import potionstudios.byg.BYG;
 import potionstudios.byg.common.block.BYGBlockTags;
 import potionstudios.byg.common.block.BYGBlocks;
@@ -36,6 +33,7 @@ import potionstudios.byg.common.world.feature.features.BYGFeaturesUtil;
 import potionstudios.byg.common.world.feature.gen.overworld.trees.decorators.AttachedToLogsDecorator;
 import potionstudios.byg.common.world.feature.gen.overworld.trees.decorators.BYGLeavesVineDecorator;
 import potionstudios.byg.common.world.feature.gen.overworld.trees.decorators.BYGTrunkVineDecorator;
+import potionstudios.byg.common.world.feature.gen.overworld.trees.decorators.CarpetUnderTreeDecorator;
 import potionstudios.byg.common.world.feature.placement.BYGPlacedFeaturesUtil;
 
 import java.util.List;
@@ -45,17 +43,22 @@ import static potionstudios.byg.common.block.BYGWoodTypes.*;
 
 public class BYGOverworldTreeFeatures {
 
+    public static final Supplier<AlterGroundDecorator> ANGELIC = () -> new AlterGroundDecorator(BlockStateProvider.simple(Blocks.MOSS_BLOCK));
+    public static final Supplier<CarpetUnderTreeDecorator> ANGELIC_CARPET = () -> new CarpetUnderTreeDecorator(1, BlockStateProvider.simple(Blocks.MOSS_CARPET));
+    public static final Supplier<BeehiveDecorator> ANGELIC_BEES = () -> new BeehiveDecorator(0.1f);
+
+
     public static final Holder<ConfiguredFeature<TreeFromStructureNBTConfig, ?>> ANGELIC_TREE1 = createConfiguredFeature("angelic_tree1",
             CorgiLibFeatures.TREE_FROM_NBT,
             () -> new TreeFromStructureNBTConfig(
                     BYG.createLocation("features/trees/angelic/angelic_trunk1"),
                     BYG.createLocation("features/trees/angelic/angelic_canopy1"),
-                    BiasedToBottomInt.of(5, 7),
+                    BiasedToBottomInt.of(8, 10),
                     BlockStateProvider.simple(BYGBlocks.ANGELIC_LOG.defaultBlockState()),
                     new WeightedStateProvider(new SimpleWeightedRandomList.Builder<BlockState>().add(BYGBlocks.ANGELIC_LEAVES.defaultBlockState(), 1).build()),
                     BYGBlocks.ANGELIC_LOG.get(),
                     BYGBlocks.ANGELIC_LEAVES.get(),
-                    BYGBlockTags.GROUND_RED_OAK_SAPLING, 5, ImmutableList.of()
+                    BYGBlockTags.GROUND_RED_OAK_SAPLING, 8, ImmutableList.of()
             )
     );
 
@@ -64,12 +67,12 @@ public class BYGOverworldTreeFeatures {
             () -> new TreeFromStructureNBTConfig(
                     BYG.createLocation("features/trees/angelic/angelic_trunk2"),
                     BYG.createLocation("features/trees/angelic/angelic_canopy2"),
-                    BiasedToBottomInt.of(5, 7),
+                    BiasedToBottomInt.of(8, 10),
                     BlockStateProvider.simple(BYGBlocks.ANGELIC_LOG.defaultBlockState()),
                     new WeightedStateProvider(new SimpleWeightedRandomList.Builder<BlockState>().add(BYGBlocks.ANGELIC_LEAVES.defaultBlockState(), 1).build()),
                     BYGBlocks.ANGELIC_LOG.get(),
                     BYGBlocks.ANGELIC_LEAVES.get(),
-                    BYGBlockTags.GROUND_RED_OAK_SAPLING, 5, ImmutableList.of()
+                    BYGBlockTags.GROUND_RED_OAK_SAPLING, 8, ImmutableList.of()
             )
     );
 
@@ -78,12 +81,40 @@ public class BYGOverworldTreeFeatures {
             () -> new TreeFromStructureNBTConfig(
                     BYG.createLocation("features/trees/angelic/angelic_trunk3"),
                     BYG.createLocation("features/trees/angelic/angelic_canopy3"),
-                    BiasedToBottomInt.of(5, 7),
+                    BiasedToBottomInt.of(8, 10),
                     BlockStateProvider.simple(BYGBlocks.ANGELIC_LOG.defaultBlockState()),
                     new WeightedStateProvider(new SimpleWeightedRandomList.Builder<BlockState>().add(BYGBlocks.ANGELIC_LEAVES.defaultBlockState(), 1).build()),
                     BYGBlocks.ANGELIC_LOG.get(),
                     BYGBlocks.ANGELIC_LEAVES.get(),
-                    BYGBlockTags.GROUND_RED_OAK_SAPLING, 5, ImmutableList.of()
+                    BYGBlockTags.GROUND_RED_OAK_SAPLING, 8, ImmutableList.of()
+            )
+    );
+
+    public static final Holder<ConfiguredFeature<TreeFromStructureNBTConfig, ?>> ANGELIC_TREE3_DECORATED = createConfiguredFeature("angelic_tree3_decorated",
+            CorgiLibFeatures.TREE_FROM_NBT,
+            () -> new TreeFromStructureNBTConfig(
+                    BYG.createLocation("features/trees/angelic/angelic_trunk3"),
+                    BYG.createLocation("features/trees/angelic/angelic_canopy3"),
+                    BiasedToBottomInt.of(8, 10),
+                    BlockStateProvider.simple(BYGBlocks.ANGELIC_LOG.defaultBlockState()),
+                    new WeightedStateProvider(new SimpleWeightedRandomList.Builder<BlockState>().add(BYGBlocks.ANGELIC_LEAVES.defaultBlockState(), 1).build()),
+                    BYGBlocks.ANGELIC_LOG.get(),
+                    BYGBlocks.ANGELIC_LEAVES.get(),
+                    BYGBlockTags.GROUND_RED_OAK_SAPLING, 8, ImmutableList.of(ANGELIC.get(), ANGELIC_BEES.get(), ANGELIC_CARPET.get())
+            )
+    );
+
+    public static final Holder<ConfiguredFeature<TreeFromStructureNBTConfig, ?>> ANGELIC_TREE4 = createConfiguredFeature("angelic_tree4",
+            CorgiLibFeatures.TREE_FROM_NBT,
+            () -> new TreeFromStructureNBTConfig(
+                    BYG.createLocation("features/trees/angelic/angelic_trunk4"),
+                    BYG.createLocation("features/trees/angelic/angelic_canopy4"),
+                    BiasedToBottomInt.of(7, 9),
+                    BlockStateProvider.simple(BYGBlocks.ANGELIC_LOG.defaultBlockState()),
+                    new WeightedStateProvider(new SimpleWeightedRandomList.Builder<BlockState>().add(BYGBlocks.ANGELIC_LEAVES.defaultBlockState(), 1).build()),
+                    BYGBlocks.ANGELIC_LOG.get(),
+                    BYGBlocks.ANGELIC_LEAVES.get(),
+                    BYGBlockTags.GROUND_RED_OAK_SAPLING, 7, ImmutableList.of()
             )
     );
 
@@ -3314,9 +3345,11 @@ public class BYGOverworldTreeFeatures {
     public static final Holder<ConfiguredFeature<RandomFeatureConfiguration, ?>> ANGELIC_TREES = createConfiguredFeature("angelic_trees",
             () -> Feature.RANDOM_SELECTOR,
             () -> new RandomFeatureConfiguration(ImmutableList.of(
-                    new WeightedPlacedFeature(BYGPlacedFeaturesUtil.createPlacedFeatureDirect(ANGELIC_TREE1), 0.25F),
-                    new WeightedPlacedFeature(BYGPlacedFeaturesUtil.createPlacedFeatureDirect(ANGELIC_TREE2), 0.25F)),
-                    BYGPlacedFeaturesUtil.createPlacedFeatureDirect(ANGELIC_TREE3))
+                    new WeightedPlacedFeature(BYGPlacedFeaturesUtil.createPlacedFeatureDirect(ANGELIC_TREE4), 0.25F),
+                    new WeightedPlacedFeature(BYGPlacedFeaturesUtil.createPlacedFeatureDirect(ANGELIC_TREE2), 0.25F),
+                    new WeightedPlacedFeature(BYGPlacedFeaturesUtil.createPlacedFeatureDirect(ANGELIC_TREE3), 0.25F),
+                    new WeightedPlacedFeature(BYGPlacedFeaturesUtil.createPlacedFeatureDirect(ANGELIC_TREE3_DECORATED), 0.20F)),
+            BYGPlacedFeaturesUtil.createPlacedFeatureDirect(ANGELIC_TREE1))
     );
 
     public static final Holder<ConfiguredFeature<RandomFeatureConfiguration, ?>> JACARANDA_TREES = createConfiguredFeature("jacaranda_trees",
