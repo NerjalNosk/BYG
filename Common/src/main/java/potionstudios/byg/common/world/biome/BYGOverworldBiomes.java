@@ -30,6 +30,7 @@ public class BYGOverworldBiomes {
 
         addDefaultOverworldGeneration(generationSettings);
         BYGDefaultBiomeFeatures.addSparseAngelicTrees(generationSettings);
+        BiomeDefaultFeatures.addDefaultCarversAndLakes(generationSettings);
         BYGDefaultBiomeFeatures.addPetunias(generationSettings);
         BiomeDefaultFeatures.addDefaultGrass(generationSettings);
         BiomeDefaultFeatures.addForestGrass(generationSettings);

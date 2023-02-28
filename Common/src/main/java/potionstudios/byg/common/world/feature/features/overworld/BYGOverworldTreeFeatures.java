@@ -78,12 +78,12 @@ public class BYGOverworldTreeFeatures {
             () -> new TreeFromStructureNBTConfig(
                     BYG.createLocation("features/trees/angelic/angelic_trunk3"),
                     BYG.createLocation("features/trees/angelic/angelic_canopy3"),
-                    BiasedToBottomInt.of(3, 4),
+                    BiasedToBottomInt.of(5, 7),
                     BlockStateProvider.simple(BYGBlocks.ANGELIC_LOG.defaultBlockState()),
                     new WeightedStateProvider(new SimpleWeightedRandomList.Builder<BlockState>().add(BYGBlocks.ANGELIC_LEAVES.defaultBlockState(), 1).build()),
                     BYGBlocks.ANGELIC_LOG.get(),
                     BYGBlocks.ANGELIC_LEAVES.get(),
-                    BYGBlockTags.GROUND_RED_OAK_SAPLING, 3, ImmutableList.of()
+                    BYGBlockTags.GROUND_RED_OAK_SAPLING, 5, ImmutableList.of()
             )
     );
 

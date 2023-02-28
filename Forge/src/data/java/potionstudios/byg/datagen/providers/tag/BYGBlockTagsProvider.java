@@ -152,6 +152,7 @@ public class BYGBlockTagsProvider extends BlockTagsProvider {
         bookselvesTag.add(Blocks.BOOKSHELF);
         tag(BlockTags.FENCE_GATES).addTag(BYGBlockTags.WOODEN_FENCE_GATES);
 
+        wood("angelic_logs", ANGELIC_LOG, STRIPPED_ANGELIC_LOG, ANGELIC_WOOD, STRIPPED_ANGELIC_WOOD);
         wood("withering_oak_logs", WITHERING_OAK_LOG, WITHERING_OAK_WOOD);
         wood("palo_verde_logs", PALO_VERDE_LOG, PALO_VERDE_WOOD, STRIPPED_PALO_VERDE_LOG, STRIPPED_PALO_VERDE_WOOD);
         wood("imbued_blue_enchanted_logs", IMBUED_BLUE_ENCHANTED_LOG);
