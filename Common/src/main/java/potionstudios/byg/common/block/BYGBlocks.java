@@ -418,6 +418,20 @@ public class BYGBlocks {
 
     public static final BlockRegistryObject<Block> WINDSWEPT_SANDSTONE_PILLAR = createSandstonePillar(MaterialColor.TERRACOTTA_PINK, "windswept_sandstone_pillar");
 
+    public static final BlockRegistryObject<Block> ANGELIC_LOG = createLog("angelic_log");
+    public static final BlockRegistryObject<Block> ANGELIC_WOOD = createLog("angelic_wood");
+    public static final BlockRegistryObject<Block> STRIPPED_ANGELIC_WOOD = createLog("stripped_angelic_wood");
+    public static final BlockRegistryObject<Block> ANGELIC_PLANKS = createPlanks("angelic_planks");
+    public static final BlockRegistryObject<Block> STRIPPED_ANGELIC_LOG = createLog("stripped_angelic_log");
+    public static final BlockRegistryObject<Block> ANGELIC_FENCE = createFence("angelic_fence");
+    public static final BlockRegistryObject<Block> ANGELIC_FENCE_GATE = createFenceGate("angelic_fence_gate");
+    public static final BlockRegistryObject<Block> ANGELIC_BUTTON = createWoodButton("angelic_button");
+    public static final BlockRegistryObject<Block> ANGELIC_PRESSURE_PLATE = createWoodPressurePlate("angelic_pressure_plate");
+    public static final BlockRegistryObject<Block> ANGELIC_SLAB = createWoodSlab("angelic_slab");
+    public static final BlockRegistryObject<Block> ANGELIC_STAIRS = createWoodStairs("angelic_stairs");
+    public static final BlockRegistryObject<Block> ANGELIC_LEAVES = createLeaves(MaterialColor.COLOR_BLUE, "angelic_leaves");
+
+    public static final BlockRegistryObject<Block> PETUNIA = createFlower("petunia", BYGBlockTags.GROUND_ROSE);
 
     public static final BlockRegistryObject<Block> PALO_VERDE_LOG = createLog("palo_verde_log");
     public static final BlockRegistryObject<Block> WITHERING_OAK_LOG = createLog("withering_oak_log");

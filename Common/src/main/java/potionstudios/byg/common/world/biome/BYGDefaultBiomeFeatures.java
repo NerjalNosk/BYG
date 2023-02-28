@@ -669,6 +669,14 @@ public class BYGDefaultBiomeFeatures {
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BYGPlacedFeatures.JACARANDA_TREES);
     }
 
+    public static void addSparseAngelicTrees(BiomeGenerationSettings.Builder gen) {
+        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BYGPlacedFeatures.SPARSE_ANGELIC_TREES);
+    }
+
+    public static void addPetunias(BiomeGenerationSettings.Builder gen) {
+        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BYGPlacedFeatures.PETUNIA);
+    }
+
     public static void addSparseJacarandaTrees(BiomeGenerationSettings.Builder gen) {
         gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BYGPlacedFeatures.SPARSE_JACARANDA_TREES);
     }

@@ -82,6 +82,7 @@ public class BYGOverworldVegetationFeatures {
     public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> INDIGO_JACARANDA_BUSH = createPatchConfiguredFeature("indigo_jacaranda_bush", () -> BYGBlocks.INDIGO_JACARANDA_BUSH.get(), 32);
     public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> FLOWERING_JACARANDA_BUSH = createPatchConfiguredFeature("flowering_jacaranda_bush", () -> BYGBlocks.FLOWERING_JACARANDA_BUSH.get(), 32);
     public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> JACARANDA_BUSH = createPatchConfiguredFeature("jacaranda_bush", () -> BYGBlocks.JACARANDA_BUSH.get(), 32);
+    public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PETUNIA = createFlowerConfiguredFeature("petunia", BYGBlocks.PETUNIA::get);
     public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PRICKLY_PEAR_CACTI = createPatchConfiguredFeature("prickly_pear_cacti", () -> BYGBlocks.PRICKLY_PEAR_CACTUS.get(), 5);
     public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> GOLDEN_SPINED_CACTI = createPatchConfiguredFeature("golden_spined_cacti", () -> BYGBlocks.GOLDEN_SPINED_CACTUS.get(), 5);
     public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PINK_CHERRY_FOLIAGE = createPatchConfiguredFeature("pink_cherry_foliage", () -> BYGBlocks.PINK_CHERRY_FOLIAGE.get(), 15);

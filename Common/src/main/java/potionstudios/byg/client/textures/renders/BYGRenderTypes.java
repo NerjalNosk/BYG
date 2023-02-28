@@ -220,6 +220,7 @@ public class BYGRenderTypes {
         map.put(BYGBlocks.ORANGE_DAISY.get(), RenderType.cutoutMipped());
         map.put(BYGBlocks.ORSIRIA_ROSE.get(), RenderType.cutoutMipped());
         map.put(BYGBlocks.PEACH_LEATHER_FLOWER.get(), RenderType.cutoutMipped());
+        map.put(BYGBlocks.PETUNIA.get(), RenderType.cutoutMipped());
         map.put(BYGBlocks.PINK_ALLIUM.get(), RenderType.cutoutMipped());
         map.put(BYGBlocks.PINK_ALLIUM_FLOWER_BUSH.get(), RenderType.cutoutMipped());
         map.put(BYGBlocks.PINK_ANEMONE.get(), RenderType.cutoutMipped());

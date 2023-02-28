@@ -31,6 +31,9 @@ public class BYGBiomes {
     public static final Multimap<TagKey<Biome>, RegistryObject<Biome>> BIOMES_BY_TAG = Multimaps.newSetMultimap(new HashMap<>(), HashSet::new);
 
     /************Overworld Biomes************/
+    public static final ResourceKey<Biome> ANGELIC_MEADOWS = createBiome("angelic_meadows", BYGOverworldBiomes::angelicMeadows, IS_OVERWORLD, IS_MAGICAL);
+
+
     public static final ResourceKey<Biome> ALLIUM_FIELDS = createBiome("allium_fields", BYGOverworldBiomes::alliumFields, IS_OVERWORLD, IS_PLAIN);
     public static final ResourceKey<Biome> AMARANTH_FIELDS = createBiome("amaranth_fields", BYGOverworldBiomes::amaranthFields, IS_OVERWORLD, IS_PLAIN);
     public static final ResourceKey<Biome> ARAUCARIA_SAVANNA = createBiome("araucaria_savanna", () -> araucariaSavanna(false), IS_OVERWORLD, IS_SAVANNA);

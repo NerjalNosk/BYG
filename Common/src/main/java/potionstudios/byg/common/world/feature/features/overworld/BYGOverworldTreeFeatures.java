@@ -44,6 +44,50 @@ import java.util.function.Supplier;
 import static potionstudios.byg.common.block.BYGWoodTypes.*;
 
 public class BYGOverworldTreeFeatures {
+
+    public static final Holder<ConfiguredFeature<TreeFromStructureNBTConfig, ?>> ANGELIC_TREE1 = createConfiguredFeature("angelic_tree1",
+            CorgiLibFeatures.TREE_FROM_NBT,
+            () -> new TreeFromStructureNBTConfig(
+                    BYG.createLocation("features/trees/angelic/angelic_trunk1"),
+                    BYG.createLocation("features/trees/angelic/angelic_canopy1"),
+                    BiasedToBottomInt.of(5, 7),
+                    BlockStateProvider.simple(BYGBlocks.ANGELIC_LOG.defaultBlockState()),
+                    new WeightedStateProvider(new SimpleWeightedRandomList.Builder<BlockState>().add(BYGBlocks.ANGELIC_LEAVES.defaultBlockState(), 1).build()),
+                    BYGBlocks.ANGELIC_LOG.get(),
+                    BYGBlocks.ANGELIC_LEAVES.get(),
+                    BYGBlockTags.GROUND_RED_OAK_SAPLING, 5, ImmutableList.of()
+            )
+    );
+
+    public static final Holder<ConfiguredFeature<TreeFromStructureNBTConfig, ?>> ANGELIC_TREE2 = createConfiguredFeature("angelic_tree2",
+            CorgiLibFeatures.TREE_FROM_NBT,
+            () -> new TreeFromStructureNBTConfig(
+                    BYG.createLocation("features/trees/angelic/angelic_trunk2"),
+                    BYG.createLocation("features/trees/angelic/angelic_canopy2"),
+                    BiasedToBottomInt.of(5, 7),
+                    BlockStateProvider.simple(BYGBlocks.ANGELIC_LOG.defaultBlockState()),
+                    new WeightedStateProvider(new SimpleWeightedRandomList.Builder<BlockState>().add(BYGBlocks.ANGELIC_LEAVES.defaultBlockState(), 1).build()),
+                    BYGBlocks.ANGELIC_LOG.get(),
+                    BYGBlocks.ANGELIC_LEAVES.get(),
+                    BYGBlockTags.GROUND_RED_OAK_SAPLING, 5, ImmutableList.of()
+            )
+    );
+
+    public static final Holder<ConfiguredFeature<TreeFromStructureNBTConfig, ?>> ANGELIC_TREE3 = createConfiguredFeature("angelic_tree3",
+            CorgiLibFeatures.TREE_FROM_NBT,
+            () -> new TreeFromStructureNBTConfig(
+                    BYG.createLocation("features/trees/angelic/angelic_trunk3"),
+                    BYG.createLocation("features/trees/angelic/angelic_canopy3"),
+                    BiasedToBottomInt.of(3, 4),
+                    BlockStateProvider.simple(BYGBlocks.ANGELIC_LOG.defaultBlockState()),
+                    new WeightedStateProvider(new SimpleWeightedRandomList.Builder<BlockState>().add(BYGBlocks.ANGELIC_LEAVES.defaultBlockState(), 1).build()),
+                    BYGBlocks.ANGELIC_LOG.get(),
+                    BYGBlocks.ANGELIC_LEAVES.get(),
+                    BYGBlockTags.GROUND_RED_OAK_SAPLING, 3, ImmutableList.of()
+            )
+    );
+
+
     public static final Holder<ConfiguredFeature<TreeFromStructureNBTConfig, ?>> ARAUCARIA_TREE1 = createConfiguredFeature("araucaria_tree1",
             CorgiLibFeatures.TREE_FROM_NBT,
             () -> new TreeFromStructureNBTConfig(
@@ -3265,6 +3309,14 @@ public class BYGOverworldTreeFeatures {
                     new WeightedPlacedFeature(BYGPlacedFeaturesUtil.createPlacedFeatureDirect(SPRUCE_TREE_MEDIUM2), 0.25F),
                     new WeightedPlacedFeature(BYGPlacedFeaturesUtil.createPlacedFeatureDirect(SPRUCE_TREE_MEDIUM1), 0.25F)),
                     BYGPlacedFeaturesUtil.createPlacedFeatureDirect(SPRUCE_TREE_LARGE1))
+    );
+
+    public static final Holder<ConfiguredFeature<RandomFeatureConfiguration, ?>> ANGELIC_TREES = createConfiguredFeature("angelic_trees",
+            () -> Feature.RANDOM_SELECTOR,
+            () -> new RandomFeatureConfiguration(ImmutableList.of(
+                    new WeightedPlacedFeature(BYGPlacedFeaturesUtil.createPlacedFeatureDirect(ANGELIC_TREE1), 0.25F),
+                    new WeightedPlacedFeature(BYGPlacedFeaturesUtil.createPlacedFeatureDirect(ANGELIC_TREE2), 0.25F)),
+                    BYGPlacedFeaturesUtil.createPlacedFeatureDirect(ANGELIC_TREE3))
     );
 
     public static final Holder<ConfiguredFeature<RandomFeatureConfiguration, ?>> JACARANDA_TREES = createConfiguredFeature("jacaranda_trees",

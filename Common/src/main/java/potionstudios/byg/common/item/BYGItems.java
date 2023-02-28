@@ -4,7 +4,6 @@ import net.minecraft.core.Registry;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
@@ -40,6 +39,19 @@ public class BYGItems {
     public static final RegistryObject<Item> PUMPKIN_WARDEN = createItem(() -> new SpawnEggItem(BYGEntities.PUMPKIN_WARDEN.get(), new Color(79, 57, 46).getRGB(), new Color(192, 106, 5).getRGB(), (new Item.Properties().tab(BYGCreativeTab.CREATIVE_TAB))), "pumpkin_warden_spawn_egg");
 
     public static final RegistryObject<Item> MAN_O_WAR_BUCKET = createItem(() -> new MobBucketItem(BYGEntities.MAN_O_WAR.get(), Fluids.WATER, SoundEvents.BUCKET_EMPTY_FISH, (new Item.Properties()).stacksTo(1).tab(BYGCreativeTab.CREATIVE_TAB)), "man_o_war_bucket");
+
+    public static final RegistryObject<Item> ANGELIC_LOG = createItem(BYGBlocks.ANGELIC_LOG);
+    public static final RegistryObject<Item> ANGELIC_WOOD = createItem(BYGBlocks.ANGELIC_WOOD);
+    public static final RegistryObject<Item> STRIPPED_ANGELIC_WOOD = createItem(BYGBlocks.STRIPPED_ANGELIC_WOOD);
+    public static final RegistryObject<Item> ANGELIC_PLANKS = createItem(BYGBlocks.ANGELIC_PLANKS);
+    public static final RegistryObject<Item> STRIPPED_ANGELIC_LOG = createItem(BYGBlocks.STRIPPED_ANGELIC_LOG);
+    public static final RegistryObject<Item> ANGELIC_FENCE = createItem(BYGBlocks.ANGELIC_FENCE);
+    public static final RegistryObject<Item> ANGELIC_FENCE_GATE = createItem(BYGBlocks.ANGELIC_FENCE_GATE);
+    public static final RegistryObject<Item> ANGELIC_BUTTON = createItem(BYGBlocks.ANGELIC_BUTTON);
+    public static final RegistryObject<Item> ANGELIC_PRESSURE_PLATE = createItem(BYGBlocks.ANGELIC_PRESSURE_PLATE);
+    public static final RegistryObject<Item> ANGELIC_SLAB = createItem(BYGBlocks.ANGELIC_SLAB);
+    public static final RegistryObject<Item> ANGELIC_STAIRS = createItem(BYGBlocks.ANGELIC_STAIRS);
+    public static final RegistryObject<Item> ANGELIC_LEAVES = createItem(BYGBlocks.ANGELIC_LEAVES);
 
 
     public static final RegistryObject<Item> PEAT = createItem(BYGBlocks.PEAT);
@@ -796,6 +808,7 @@ public class BYGItems {
     public static final RegistryObject<Item> ORANGE_DAISY = createItem(BYGBlocks.ORANGE_DAISY);
     public static final RegistryObject<Item> ORSIRIA_ROSE = createItem(BYGBlocks.ORSIRIA_ROSE);
     public static final RegistryObject<Item> PEACH_LEATHER_FLOWER = createItem(BYGBlocks.PEACH_LEATHER_FLOWER);
+    public static final RegistryObject<Item> PETUNIA = createItem(BYGBlocks.PETUNIA);
     public static final RegistryObject<Item> PINK_ALLIUM = createItem(BYGBlocks.PINK_ALLIUM);
     public static final RegistryObject<Item> PINK_ALLIUM_FLOWER_BUSH = createItem(BYGBlocks.PINK_ALLIUM_FLOWER_BUSH);
     public static final RegistryObject<Item> TALL_PINK_ALLIUM = createItem(BYGBlocks.TALL_PINK_ALLIUM);

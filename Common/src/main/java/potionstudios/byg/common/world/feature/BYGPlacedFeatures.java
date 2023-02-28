@@ -70,6 +70,8 @@ public class BYGPlacedFeatures {
 
     public static final Holder<PlacedFeature> SHRUB = createPlacedFeature("shrub", BYGOverworldVegetationFeatures.SHRUB, () -> worldSurfaceSquaredWithCount(1));
 
+    public static final Holder<PlacedFeature> PETUNIA = createPlacedFeature("petunia", BYGOverworldVegetationFeatures.PETUNIA, () -> worldSurfaceSquaredWithCount(3));
+
     public static final Holder<PlacedFeature> FIRECRACKER_BUSH = createPlacedFeature("firecracker_bush", BYGOverworldVegetationFeatures.FIRECRACKER_BUSH, () -> worldSurfaceSquaredWithCount(3));
     public static final Holder<PlacedFeature> BLUE_BERRY_BUSH = createPlacedFeature("blue_berry_bush", BYGOverworldVegetationFeatures.PATCH_BLUEBERRY, () -> RarityFilter.onAverageOnceEvery(32), InSquarePlacement::spread, () -> PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter::biome);
     public static final Holder<PlacedFeature> BLUE_BERRY_BUSH_LUSH = createPlacedFeature("blue_berry_bush_lush", BYGOverworldVegetationFeatures.PATCH_BLUEBERRY, () -> RarityFilter.onAverageOnceEvery(24), InSquarePlacement::spread, () -> PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter::biome);
@@ -231,6 +233,9 @@ public class BYGPlacedFeatures {
     public static final Holder<PlacedFeature> FIRECRACKER_SHRUBS = createPlacedFeature("firecracker_shrubs", BYGOverworldTreeFeatures.FIRECRACKER_SHRUBS, () -> clearingTreePlacement(PlacementUtils.countExtra(0, 0.25F, 2)));
 
     public static final Holder<PlacedFeature> SPARSE_RED_OAK_TREES = createPlacedFeature("sparse_red_oak_trees", BYGOverworldTreeFeatures.RED_OAK_TREES, () -> clearingTreePlacement(PlacementUtils.countExtra(0, 0.2F, 1)));
+
+    public static final Holder<PlacedFeature> SPARSE_ANGELIC_TREES = createPlacedFeature("sparse_angelic_trees", BYGOverworldTreeFeatures.ANGELIC_TREES, () -> clearingTreePlacement(PlacementUtils.countExtra(0, 0.2F, 2)));
+
 
     public static final Holder<PlacedFeature> SPARSE_JACARANDA_TREES = createPlacedFeature("sparse_jacaranda_trees", BYGOverworldTreeFeatures.JACARANDA_TREES, () -> clearingTreePlacement(PlacementUtils.countExtra(0, 0.2F, 2)));
     public static final Holder<PlacedFeature> SPARSE_ARAUCARIA_TREES = createPlacedFeature("sparse_araucaria_trees", BYGOverworldTreeFeatures.ARAUCARIA_TREES, () -> clearingTreePlacement(PlacementUtils.countExtra(0, 0.2F, 3)));
