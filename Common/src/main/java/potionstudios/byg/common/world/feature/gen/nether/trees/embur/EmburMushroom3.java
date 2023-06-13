@@ -27,7 +27,7 @@ public class EmburMushroom3 extends BYGAbstractMushroomFeature<BYGMushroomConfig
         BlockPos.MutableBlockPos mainmutable = new BlockPos.MutableBlockPos().set(pos);
 
         if (pos.getY() + randTreeHeight + 1 < worldIn.getMaxBuildHeight()) {
-            if (!isDesiredGroundwDirtTag(config, worldIn, pos.below(), BYGBlocks.EMBUR_NYLIUM.get())) {
+            if (!isDesiredGroundwDirtTag(config, worldIn, pos.below())) {
                 return false;
             } else if (!this.isAnotherMushroomLikeThisNearby(worldIn, pos, randTreeHeight, 0, STEM.getBlock(), MUSHROOM.getBlock(), isMushroom)) {
                 return false;
@@ -481,7 +481,6 @@ public class EmburMushroom3 extends BYGAbstractMushroomFeature<BYGMushroomConfig
 
     private void pollen_block(WorldGenLevel reader, BlockPos pos) {
         if (isAir(reader, pos)) {
-            this.setFinalBlockState(reader, pos, BYGBlocks.POLLEN_BLOCK.defaultBlockState());
         }
     }
 

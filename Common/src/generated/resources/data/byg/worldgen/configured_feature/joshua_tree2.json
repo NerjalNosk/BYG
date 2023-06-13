@@ -19,7 +19,7 @@
           "source": {
             "type": "minecraft:simple_state_provider",
             "state": {
-              "Name": "byg:joshua_fruit_block",
+              "Name": "byg:yucca_fruit_block",
               "Properties": {
                 "age": "0"
               }
@@ -54,7 +54,7 @@
       "entries": [
         {
           "data": {
-            "Name": "byg:joshua_leaves",
+            "Name": "byg:yucca_leaves",
             "Properties": {
               "distance": "7",
               "persistent": "false",
@@ -65,7 +65,7 @@
         },
         {
           "data": {
-            "Name": "byg:flowering_joshua_leaves",
+            "Name": "byg:flowering_yucca_leaves",
             "Properties": {
               "distance": "7",
               "persistent": "false",
@@ -76,7 +76,7 @@
         },
         {
           "data": {
-            "Name": "byg:ripe_joshua_leaves",
+            "Name": "byg:ripe_yucca_leaves",
             "Properties": {
               "distance": "7",
               "persistent": "false",
@@ -88,7 +88,7 @@
       ]
     },
     "leaves_target": [
-      "byg:joshua_leaves"
+      "byg:yucca_leaves"
     ],
     "log_provider": {
       "type": "minecraft:simple_state_provider",

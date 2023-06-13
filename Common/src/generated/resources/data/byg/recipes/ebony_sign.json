@@ -1,21 +1,23 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "sign",
+  "category": "misc",
+  "group": "wooden_sign",
   "key": {
-    "P": {
+    "#": {
       "item": "byg:ebony_planks"
     },
-    "S": {
+    "X": {
       "tag": "byg:all/sticks"
     }
   },
   "pattern": [
-    "PPP",
-    "PPP",
-    " S "
+    "###",
+    "###",
+    " X "
   ],
   "result": {
     "count": 3,
     "item": "byg:ebony_sign"
-  }
+  },
+  "show_notification": true
 }

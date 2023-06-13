@@ -5,7 +5,7 @@
     "min_length": 6,
     "whitelist": [
       {
-        "Name": "byg:scoria_stone"
+        "Name": "minecraft:netherrack"
       }
     ],
     "x_axis_block_provider": {

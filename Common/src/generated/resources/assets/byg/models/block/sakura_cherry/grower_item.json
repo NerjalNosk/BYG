@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "byg:block/sakura_cherry/grower_item"
+  }
+}

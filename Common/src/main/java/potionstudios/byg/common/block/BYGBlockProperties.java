@@ -13,14 +13,11 @@ import potionstudios.byg.common.block.nether.glowstonegardens.HangingVinesPlantB
 import potionstudios.byg.common.block.nether.glowstonegardens.SoulShroomSporeBlock;
 import potionstudios.byg.common.block.nether.glowstonegardens.SoulShroomSporeEndBlock;
 import potionstudios.byg.common.block.nether.scorched.ScorchedPlantBlock;
-import potionstudios.byg.common.block.nether.subzerohypogeal.SubzeroAshBlock;
 import potionstudios.byg.common.block.nether.sythian.*;
 import potionstudios.byg.common.block.nether.wailing.HangingBonesBlock;
 import potionstudios.byg.common.block.nether.warped.BYGWarpedBushBlock;
 import potionstudios.byg.common.block.nether.warped.BYGWarpedCoralPlantBlock;
 import potionstudios.byg.common.block.nether.warped.BYGWarpedCoralWallFanBlock;
-import potionstudios.byg.common.block.nether.weepingmire.LamentVineBlock;
-import potionstudios.byg.common.block.nether.weepingmire.LamentVinePlantBlock;
 
 @SuppressWarnings("deprecation")
 public class BYGBlockProperties {
@@ -93,17 +90,6 @@ public class BYGBlockProperties {
                     .lightLevel((state) -> 10)
                     .requiresCorrectToolForDrops()
 
-            );
-
-        }
-    }
-
-    public static class BYGSubzeroAsh extends SubzeroAshBlock {
-        public BYGSubzeroAsh() {
-            super(BlockBehaviour.Properties.of()
-                    .sound(SoundType.SAND)
-                    .strength(0.1f)
-                    .speedFactor(0.6F)
             );
 
         }
@@ -265,30 +251,6 @@ public class BYGBlockProperties {
                     .noOcclusion()
             );
 
-
-        }
-    }
-
-    public static class BYGLamentVinePlant extends LamentVinePlantBlock {
-        public BYGLamentVinePlant() {
-            super(BlockBehaviour.Properties.of()
-                    .sound(SoundType.WEEPING_VINES)
-                    .strength(0.2f)
-                    .randomTicks()
-                    .noCollission()
-            );
-
-        }
-    }
-
-    public static class BYGLamentVine extends LamentVineBlock {
-        public BYGLamentVine() {
-            super(BlockBehaviour.Properties.of()
-                    .sound(SoundType.WEEPING_VINES)
-                    .strength(0.2f)
-                    .randomTicks()
-                    .noCollission()
-            );
 
         }
     }

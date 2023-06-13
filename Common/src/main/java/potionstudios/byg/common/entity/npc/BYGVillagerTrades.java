@@ -47,15 +47,12 @@ public class BYGVillagerTrades {
                 new VillagerTrades.ItemsForEmeralds(BYGItems.WITCH_HAZEL_BLOSSOM.get(), 10, 1, 10, 3),
             },
             5, new VillagerTrades.ItemListing[]{
-                new VillagerTrades.EmeraldForItems(BYGWoodTypes.IMPARIUS.growerItem().asItem(), 10, 12, 2),
-                new VillagerTrades.EmeraldForItems(BYGItems.SHULKREN_FUNGUS.get(), 10, 12, 2),
-                new VillagerTrades.EmeraldForItems(BYGItems.FUNGAL_IMPARIUS.get(), 10, 12, 2),
+                new VillagerTrades.EmeraldForItems(BYGWoodTypes.IMPARIUS.growerItem().asItem(), 10, 12, 2)
             }
         )));
 
         map.put(getKeyOrThrow(VillagerProfession.ARMORER), toIntMap(ImmutableMap.of(
             4, new VillagerTrades.ItemListing[]{
-                new VillagerTrades.ItemsForEmeralds(BYGItems.CHAIN_PLATING.get(), 3, 7, 12, 2)
             }
         )));
         map.put(getKeyOrThrow(VillagerProfession.BUTCHER), toIntMap(ImmutableMap.of(

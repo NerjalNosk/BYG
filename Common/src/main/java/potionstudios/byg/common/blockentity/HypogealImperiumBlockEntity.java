@@ -24,7 +24,7 @@ import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import potionstudios.byg.client.gui.HypogealImperiumContainer;
-import potionstudios.byg.common.block.nether.HypogealImperiumBlock;
+import potionstudios.byg.common.block.nether.GlacialImperiumBlock;
 import potionstudios.byg.common.item.BYGItems;
 
 import java.util.List;
@@ -126,7 +126,7 @@ public class HypogealImperiumBlockEntity extends RandomizableContainerBlockEntit
 
     public static void setLit(Level level, BlockPos blockPos, BlockState blockState, HypogealImperiumBlockEntity hypogealImperiumBlockEntity) {
         if (hypogealImperiumBlockEntity.isLit()) {
-            level.setBlock(hypogealImperiumBlockEntity.worldPosition, level.getBlockState(hypogealImperiumBlockEntity.worldPosition).setValue(HypogealImperiumBlock.LIT, hypogealImperiumBlockEntity.isLit()), 3);
+            level.setBlock(hypogealImperiumBlockEntity.worldPosition, level.getBlockState(hypogealImperiumBlockEntity.worldPosition).setValue(GlacialImperiumBlock.LIT, hypogealImperiumBlockEntity.isLit()), 3);
             hypogealImperiumBlockEntity.setChanged();
         }
     }
@@ -141,16 +141,16 @@ public class HypogealImperiumBlockEntity extends RandomizableContainerBlockEntit
                 hypogealImperiumBlockEntity.setFuel(9);
                 itemFuelItem.shrink(1);
             }
-            if (itemCatalystItem.getItem() == BYGItems.SUBZERO_CRYSTAL_CLUSTER.get()) {
+            if (itemCatalystItem.getItem() == BYGItems.AMETRINE_GEMS.get()) {
                 if (hypogealImperiumBlockEntity.getFuel() > 0) {
                     hypogealImperiumBlockEntity.setFuel(hypogealImperiumBlockEntity.getFuel() - 1);
                     itemCatalystItem.shrink(1);
                     hypogealImperiumBlockEntity.setCrystal(hypogealImperiumBlockEntity.getCrystal() + 1);
                     hypogealImperiumBlockEntity.getLevel().sendBlockUpdated(hypogealImperiumBlockEntity.worldPosition, hypogealImperiumBlockEntity.getBlockState(), hypogealImperiumBlockEntity.getBlockState(), 13);
-                    if (resultItem.getItem() != BYGItems.SUBZERO_CRYSTAL_CLUSTER.get()) {
-                        hypogealImperiumBlockEntity.setItem(2, BYGItems.SUBZERO_CRYSTAL_CLUSTER.get().getDefaultInstance());
+                    if (resultItem.getItem() != BYGItems.AMETRINE_GEMS.get()) {
+                        hypogealImperiumBlockEntity.setItem(2, BYGItems.AMETRINE_GEMS.get().getDefaultInstance());
                     }
-                    if (resultItem.getItem() == BYGItems.SUBZERO_CRYSTAL_CLUSTER.get()) {
+                    if (resultItem.getItem() == BYGItems.AMETRINE_GEMS.get()) {
                         resultItem.setCount(resultItem.getCount() + 1);
                     }
                 }
@@ -268,7 +268,7 @@ public class HypogealImperiumBlockEntity extends RandomizableContainerBlockEntit
 
     protected void onOpenOrClose() {
         Block block = this.getBlockState().getBlock();
-        if (block instanceof HypogealImperiumBlock) {
+        if (block instanceof GlacialImperiumBlock) {
             this.level.blockEvent(this.worldPosition, block, 1, this.numPlayersUsing);
             this.level.updateNeighborsAt(this.worldPosition, block);
         }

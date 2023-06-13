@@ -6,6 +6,7 @@
   "mixins": [
     "dev.ModelBuilderMixin",
     "dev.ModelProviderAccess",
+    "dev.RecipeProviderMixin",
     "dev.TagBuilderAccess",
     "world.level.storage.loot.MixinLootTableManager"
   ],

@@ -1,9 +1,10 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "group": "wooden_fence",
   "key": {
     "#": {
-      "tag": "byg:all/sticks"
+      "item": "minecraft:stick"
     },
     "W": {
       "item": "byg:green_enchanted_planks"
@@ -16,5 +17,6 @@
   "result": {
     "count": 3,
     "item": "byg:green_enchanted_fence"
-  }
+  },
+  "show_notification": true
 }

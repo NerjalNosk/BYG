@@ -54,9 +54,7 @@
       "minecraft:spring_closed",
       "minecraft:ore_ancient_debris_large",
       "minecraft:ore_debris_small",
-      "byg:ore_pendorite",
-      "byg:ore_gold_blue_netherrack",
-      "byg:ore_quartz_blue_netherrack"
+      "byg:ore_pendorite"
     ],
     [],
     [

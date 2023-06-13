@@ -1,18 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "group": "wooden_stairs",
   "key": {
-    "P": {
+    "#": {
       "item": "byg:willow_planks"
     }
   },
   "pattern": [
-    "P  ",
-    "PP ",
-    "PPP"
+    "#  ",
+    "## ",
+    "###"
   ],
   "result": {
     "count": 4,
     "item": "byg:willow_stairs"
-  }
+  },
+  "show_notification": true
 }

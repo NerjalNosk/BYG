@@ -1,18 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "redstone",
   "group": "wooden_door",
   "key": {
-    "P": {
+    "#": {
       "item": "byg:mahogany_planks"
     }
   },
   "pattern": [
-    "PP",
-    "PP",
-    "PP"
+    "##",
+    "##",
+    "##"
   ],
   "result": {
     "count": 3,
     "item": "byg:mahogany_door"
-  }
+  },
+  "show_notification": true
 }

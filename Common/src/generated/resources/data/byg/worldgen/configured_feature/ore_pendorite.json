@@ -9,7 +9,7 @@
           "Name": "byg:pendorite_ore"
         },
         "target": {
-          "block": "byg:blue_netherrack",
+          "block": "minecraft:netherrack",
           "predicate_type": "minecraft:block_match"
         }
       }

@@ -1,18 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "redstone",
   "group": "wooden_door",
   "key": {
-    "P": {
+    "#": {
       "item": "byg:aspen_planks"
     }
   },
   "pattern": [
-    "PP",
-    "PP",
-    "PP"
+    "##",
+    "##",
+    "##"
   ],
   "result": {
     "count": 3,
     "item": "byg:aspen_door"
-  }
+  },
+  "show_notification": true
 }

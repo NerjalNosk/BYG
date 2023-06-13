@@ -48,9 +48,8 @@ public enum BYGWoodTypes {
             .registryName(BlockType.WOOD, "%s_wood")
             .registryName(BlockType.STRIPPED_WOOD, "stripped_%s_wood")
             .nether()),
-    CHERRY("cherry", new Builder()
-            .exclude(BlockType.SAPLING, BlockType.LEAVES)
-            .boatType(BYGBoat.BYGType.CHERRY)),
+    SAKURA_CHERRY("sakura_cherry", new Builder()
+            .boatType(BYGBoat.BYGType.SAKURA_CHERRY)),
     CIKA("cika", new Builder()
             .growerItemGroundTag(BYGBlockTags.GROUND_CIKA_SAPLING)
             .boatType(BYGBoat.BYGType.CIKA)
@@ -140,10 +139,6 @@ public enum BYGWoodTypes {
             .growerItemGroundTag(BYGBlockTags.GROUND_SKYRIS_SAPLING)
             .MapColor(MapColor.COLOR_PINK)
             .boatType(BYGBoat.BYGType.SKYRIS)),
-    LAMENT("lament", new Builder()
-            .growerItemGroundTag(BYGBlockTags.GROUND_LAMENT_SAPLING)
-            .MapColor(MapColor.COLOR_MAGENTA)
-            .notFlammable()),
     MAPLE("maple", new Builder()
             .growerItemGroundTag(BYGBlockTags.GROUND_MAPLE_SAPLING)
             .MapColor(MapColor.COLOR_GREEN)

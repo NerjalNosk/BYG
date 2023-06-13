@@ -1,21 +1,23 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "sign",
+  "category": "misc",
+  "group": "wooden_sign",
   "key": {
-    "P": {
+    "#": {
       "item": "byg:green_enchanted_planks"
     },
-    "S": {
+    "X": {
       "tag": "byg:all/sticks"
     }
   },
   "pattern": [
-    "PPP",
-    "PPP",
-    " S "
+    "###",
+    "###",
+    " X "
   ],
   "result": {
     "count": 3,
     "item": "byg:green_enchanted_sign"
-  }
+  },
+  "show_notification": true
 }

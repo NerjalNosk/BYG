@@ -1,9 +1,10 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "redstone",
   "group": "wooden_fence_gate",
   "key": {
     "#": {
-      "tag": "byg:all/sticks"
+      "item": "minecraft:stick"
     },
     "W": {
       "item": "byg:willow_planks"
@@ -15,5 +16,6 @@
   ],
   "result": {
     "item": "byg:willow_fence_gate"
-  }
+  },
+  "show_notification": true
 }

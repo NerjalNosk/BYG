@@ -1,15 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "redstone",
   "group": "wooden_pressure_plate",
   "key": {
-    "P": {
+    "#": {
       "item": "byg:ebony_planks"
     }
   },
   "pattern": [
-    "PP"
+    "##"
   ],
   "result": {
     "item": "byg:ebony_pressure_plate"
-  }
+  },
+  "show_notification": true
 }

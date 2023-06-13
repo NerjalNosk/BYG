@@ -89,8 +89,6 @@ public class BYGOverworldVegetationFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> JACARANDA_BUSH = createPatchConfiguredFeatureWithBlock("jacaranda_bush", () -> BYGBlocks.JACARANDA_BUSH.get(), 32);
     public static final ResourceKey<ConfiguredFeature<?, ?>> PRICKLY_PEAR_CACTI = createPatchConfiguredFeatureWithBlock("prickly_pear_cacti", () -> BYGBlocks.PRICKLY_PEAR_CACTUS.get(), 5);
     public static final ResourceKey<ConfiguredFeature<?, ?>> GOLDEN_SPINED_CACTI = createPatchConfiguredFeatureWithBlock("golden_spined_cacti", () -> BYGBlocks.GOLDEN_SPINED_CACTUS.get(), 5);
-    public static final ResourceKey<ConfiguredFeature<?, ?>> PINK_CHERRY_FOLIAGE = createPatchConfiguredFeatureWithBlock("pink_cherry_foliage", () -> BYGBlocks.PINK_CHERRY_FOLIAGE.get(), 15);
-    public static final ResourceKey<ConfiguredFeature<?, ?>> WHITE_CHERRY_FOLIAGE = createPatchConfiguredFeatureWithBlock("white_cherry_foliage", () -> BYGBlocks.WHITE_CHERRY_FOLIAGE.get(), 15);
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_BLUEBERRY = createPatchConfiguredFeatureState("blue_berry_bush", () -> BYGBlocks.BLUEBERRY_BUSH.defaultBlockState().setValue(BlueBerryBush.AGE, 3), 32);
     public static final ResourceKey<ConfiguredFeature<?, ?>> ROSE = createFlowerConfiguredFeature("rose", () -> BYGBlocks.ROSE.get());
     public static final ResourceKey<ConfiguredFeature<?, ?>> CROCUS = createFlowerConfiguredFeature("crocus", () -> BYGBlocks.CROCUS.get());
@@ -316,16 +314,6 @@ public class BYGOverworldVegetationFeatures {
             }
     );
 
-    public static final ResourceKey<ConfiguredFeature<?, ?>> CHERRY_FOLIAGE = createConfiguredFeature("cherry_foliage",
-            () -> Feature.RANDOM_SELECTOR,
-            (configuredFeatureBootstapContext) -> {
-                HolderGetter<ConfiguredFeature<?, ?>> lookup = configuredFeatureBootstapContext.lookup(Registries.CONFIGURED_FEATURE);
-
-                return new RandomFeatureConfiguration(ImmutableList.of(
-                        new WeightedPlacedFeature(BYGPlacedFeaturesUtil.createPlacedFeatureDirect(lookup.getOrThrow(WHITE_CHERRY_FOLIAGE)), 0.5F)),
-                        BYGPlacedFeaturesUtil.createPlacedFeatureDirect(lookup.getOrThrow(PINK_CHERRY_FOLIAGE)));
-            }
-    );
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> CLOVER_AND_FLOWERS = createConfiguredFeature("clovers_and_flowers",
             () -> Feature.RANDOM_SELECTOR,

@@ -103,7 +103,7 @@ public class GiantFlowerConfig implements FeatureConfiguration {
         private BlockStateProvider petalProvider = SimpleStateProvider.simple(Blocks.OAK_LEAVES.defaultBlockState());
         private BlockStateProvider petal2Provider = this.petalProvider;
         private BlockStateProvider petal3Provider = this.petalProvider;
-        private BlockStateProvider pollenProvider = SimpleStateProvider.simple(BYGBlocks.POLLEN_BLOCK.defaultBlockState());
+        private BlockStateProvider pollenProvider = SimpleStateProvider.simple(Blocks.AIR.defaultBlockState());
         private int minHeight = 15;
         private int maxPossibleHeight = 1;
 

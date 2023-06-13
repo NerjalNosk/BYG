@@ -104,7 +104,7 @@ public class BYGMushroomConfig implements FeatureConfiguration {
         private BlockStateProvider mushroomProvider = SimpleStateProvider.simple(Blocks.OAK_LEAVES.defaultBlockState());
         private BlockStateProvider mushroom2Provider = this.mushroomProvider;
         private BlockStateProvider mushroom3Provider = this.mushroomProvider;
-        private BlockStateProvider pollenProvider = SimpleStateProvider.simple(BYGBlocks.POLLEN_BLOCK.defaultBlockState());
+        private BlockStateProvider pollenProvider = SimpleStateProvider.simple(Blocks.AIR.defaultBlockState());
         private int minHeight = 15;
         private int maxPossibleHeight = 1;
 
