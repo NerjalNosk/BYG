@@ -344,10 +344,20 @@ public class BYGBlocks {
 
     public static final BlockRegistryObject<Block> BLUE_SAND = createSand(MapColor.TERRACOTTA_WHITE, 13559021, "blue_sand");
     public static final BlockRegistryObject<Block> BLUE_SANDSTONE = createBlock(BYGBlockProperties.BYGStone::new, "blue_sandstone");
+    public static final BlockRegistryObject<Block> BLUE_SANDSTONE_SLAB = createSandstoneSlab(MapColor.TERRACOTTA_WHITE, "blue_sandstone_slab");
+    public static final BlockRegistryObject<Block> BLUE_SANDSTONE_STAIRS = createSandstoneStairs(MapColor.TERRACOTTA_WHITE, "blue_sandstone_stairs");
+    public static final BlockRegistryObject<Block> BLUE_SANDSTONE_WALL = createSandstoneWall(MapColor.TERRACOTTA_WHITE, "windswept_sandstone_wall");
     public static final BlockRegistryObject<Block> BLUE_CHISELED_SANDSTONE = createBlock(BYGBlockProperties.BYGStone::new, "blue_chiseled_sandstone");
-    public static final BlockRegistryObject<Block> BLUE_CUT_SANDSTONE = createBlock(BYGBlockProperties.BYGStone::new, "blue_cut_sandstone");
-    public static final BlockRegistryObject<Block> BLUE_SMOOTH_SANDSTONE = createBlock(BYGBlockProperties.BYGStone::new, "blue_smooth_sandstone");
 
+    public static final BlockRegistryObject<Block> BLUE_CUT_SANDSTONE = createBlock(BYGBlockProperties.BYGStone::new, "blue_cut_sandstone");
+    public static final BlockRegistryObject<Block> BLUE_CUT_SANDSTONE_SLAB = createSandstoneSlab(MapColor.TERRACOTTA_WHITE, "blue_cut_sandstone_slab");
+    public static final BlockRegistryObject<Block> BLUE_CUT_SANDSTONE_STAIRS = createSandstoneStairs(MapColor.TERRACOTTA_WHITE, "blue_cut_sandstone_stairs");
+    public static final BlockRegistryObject<Block> BLUE_CUT_SANDSTONE_WALL = createSandstoneWall(MapColor.TERRACOTTA_WHITE, "blue_cut_sandstone_wall");
+
+    public static final BlockRegistryObject<Block> BLUE_SMOOTH_SANDSTONE = createBlock(BYGBlockProperties.BYGStone::new, "blue_smooth_sandstone");
+    public static final BlockRegistryObject<Block> BLUE_SMOOTH_SANDSTONE_SLAB = createSandstoneSlab(MapColor.TERRACOTTA_WHITE, "blue_smooth_sandstone_slab");
+    public static final BlockRegistryObject<Block> BLUE_SMOOTH_SANDSTONE_STAIRS = createSandstoneStairs(MapColor.TERRACOTTA_WHITE, "blue_smooth_sandstone_stairs");
+    public static final BlockRegistryObject<Block> BLUE_SMOOTH_SANDSTONE_WALL = createSandstoneWall(MapColor.TERRACOTTA_WHITE, "blue_smooth_sandstone_wall");
     public static final BlockRegistryObject<Block> PURPLE_SAND = createSand(MapColor.TERRACOTTA_PURPLE, 12887002, "purple_sand");
     public static final BlockRegistryObject<Block> PURPLE_SANDSTONE = createBlock(BYGBlockProperties.BYGStone::new, "purple_sandstone");
     public static final BlockRegistryObject<Block> PURPLE_CHISELED_SANDSTONE = createBlock(BYGBlockProperties.BYGStone::new, "purple_chiseled_sandstone");

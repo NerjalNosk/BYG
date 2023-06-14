@@ -15,8 +15,10 @@ import potionstudios.byg.common.world.preset.BYGWorldPresets;
 import potionstudios.byg.common.world.structure.BYGStructureSets;
 import potionstudios.byg.common.world.structure.BYGStructures;
 import potionstudios.byg.common.world.structure.village.pool.StructureTemplatePoolFactory;
+import potionstudios.byg.core.BYGRegistry;
 import potionstudios.byg.datagen.providers.BYGRecipeProviders;
 import potionstudios.byg.datagen.providers.BYGWoodAssetsProvider;
+import potionstudios.byg.datagen.providers.tag.BYGWorldPresetTagsProvider;
 
 import java.util.Set;
 
@@ -70,10 +72,12 @@ public class BYGDataGen {
     @SubscribeEvent
     static void onDatagen(final GatherDataEvent event) {
         final var gen = event.getGenerator();
+        BYGRegistry.loadClasses();
+        gen.addProvider(event.includeServer(), new DatapackBuiltinEntriesProvider(gen.getPackOutput(), event.getLookupProvider(), BUILDER, Set.of(BYG.MOD_ID)));
 
         gen.addProvider(event.includeServer(), new BYGRecipeProviders(gen));
         gen.addProvider(event.includeServer(), new BYGWoodAssetsProvider(gen, event.getExistingFileHelper()));
-        gen.addProvider(event.includeServer(), new DatapackBuiltinEntriesProvider(gen.getPackOutput(), event.getLookupProvider(), BUILDER, Set.of(BYG.MOD_ID)));
-    }
 
+
+    }
 }

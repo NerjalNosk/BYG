@@ -4,6 +4,8 @@ import com.google.common.collect.Maps;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import potionstudios.byg.common.block.BYGBlocks;
 import potionstudios.byg.common.block.BYGWoodTypes;
 
 import java.util.Map;
@@ -34,6 +36,16 @@ public class BYGBlockFamilies {
     public static final BlockFamily SKYRIS = familyBuilder(BYGWoodTypes.SKYRIS).getFamily();
     public static final BlockFamily MAPLE = familyBuilder(BYGWoodTypes.MAPLE).getFamily();
     public static final BlockFamily JACARANDA = familyBuilder(BYGWoodTypes.JACARANDA).getFamily();
+
+    public static final BlockFamily WINDSWEPT_SANDSTONE = familyBuilder(BYGBlocks.WINDSWEPT_SANDSTONE.get()).slab(BYGBlocks.WINDSWEPT_SANDSTONE_SLAB.get()).stairs(BYGBlocks.WINDSWEPT_SANDSTONE_STAIRS.get()).wall(BYGBlocks.WINDSWEPT_SANDSTONE_WALL.get()).chiseled(BYGBlocks.CHISELED_WINDSWEPT_SANDSTONE.get()).cut(BYGBlocks.CUT_WINDSWEPT_SANDSTONE.get()).getFamily();
+    public static final BlockFamily CUT_WINDSWEPT_SANDSTONE = familyBuilder(BYGBlocks.CUT_WINDSWEPT_SANDSTONE.get()).slab(BYGBlocks.CUT_WINDSWEPT_SANDSTONE_SLAB.get()).stairs(BYGBlocks.CUT_WINDSWEPT_SANDSTONE_STAIRS.get()).wall(BYGBlocks.CUT_WINDSWEPT_SANDSTONE_WALL.get()).getFamily();
+    public static final BlockFamily SMOOTH_WINDSWEPT_SANDSTONE = familyBuilder(BYGBlocks.SMOOTH_WINDSWEPT_SANDSTONE.get()).slab(BYGBlocks.SMOOTH_WINDSWEPT_SANDSTONE_SLAB.get()).stairs(BYGBlocks.SMOOTH_WINDSWEPT_SANDSTONE_STAIRS.get()).wall(BYGBlocks.SMOOTH_WINDSWEPT_SANDSTONE_WALL.get()).getFamily();
+
+
+    public static final BlockFamily BLUE_SANDSTONE = familyBuilder(BYGBlocks.BLUE_SANDSTONE.get()).slab(BYGBlocks.BLUE_SANDSTONE_SLAB.get()).stairs(BYGBlocks.BLUE_SANDSTONE_STAIRS.get()).wall(BYGBlocks.BLUE_SANDSTONE_WALL.get()).chiseled(BYGBlocks.BLUE_CHISELED_SANDSTONE.get()).cut(BYGBlocks.BLUE_CUT_SANDSTONE.get()).getFamily();
+    public static final BlockFamily CUT_BLUE_SANDSTONE = familyBuilder(BYGBlocks.BLUE_CUT_SANDSTONE.get()).slab(BYGBlocks.BLUE_CUT_SANDSTONE_SLAB.get()).stairs(BYGBlocks.BLUE_CUT_SANDSTONE_STAIRS.get()).wall(BYGBlocks.BLUE_CUT_SANDSTONE_WALL.get()).getFamily();
+    public static final BlockFamily SMOOTH_BLUE_SANDSTONE = familyBuilder(BYGBlocks.BLUE_SMOOTH_SANDSTONE.get()).slab(BYGBlocks.BLUE_CUT_SANDSTONE_SLAB.get()).stairs(BYGBlocks.BLUE_SMOOTH_SANDSTONE_STAIRS.get()).wall(BYGBlocks.SMOOTH_WINDSWEPT_SANDSTONE_WALL.get()).getFamily();
+
 
     public static BlockFamily.Builder familyBuilder(BYGWoodTypes woodTypes) {
         Block block = woodTypes.planks().get();
