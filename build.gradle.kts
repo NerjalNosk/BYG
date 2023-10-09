@@ -7,27 +7,16 @@ plugins {
     idea
     java
 }
-/*
+
 registrationUtils {
     group("potionstudios.byg.reg")
-    println(subprojects)
     projects {
-        "Common" {
-            type("common")
-            project(":Common")
-        }
-        "Fabric" {
-            type("fabric")
-            project(":Fabric")
-        }
-        "Forge" {
-            type("forge")
-            project(":Forge")
-        }
+        register("Common") { type("common") }
+        register("Fabric") { type("fabric")}
+        register("Forge") { type("forge") }
     }
 }
 
- */
 
 val minecraftVersion = project.properties["minecraft_version"] as String
 
