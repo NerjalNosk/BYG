@@ -49,7 +49,7 @@ public abstract class MixinInventoryScreen<T extends AbstractContainerMenu> exte
         }
     }
 
-    @Inject(method = "lambda$init$0(Lnet/minecraft/client/gui/components/Button;)V", at = @At("RETURN"))
+    @Inject(method = "method_19891(Lnet/minecraft/client/gui/components/Button;)V", at = @At("RETURN"))
     protected void updateGuiSize(CallbackInfo ci) {
         if (BYGConstants.BIOMEPEDIA) {
             if (biomePedia != null) {
