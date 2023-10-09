@@ -4,6 +4,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.minecraft.client.particle.ParticleEngine;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.resources.model.Material;
 import net.minecraft.core.particles.ParticleOptions;
@@ -11,7 +12,6 @@ import net.minecraft.core.particles.ParticleType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import potionstudios.byg.BYGFabric;
 import potionstudios.byg.client.textures.renders.BYGRenderTypes;
-import potionstudios.byg.mixin.access.client.ItemBlockRenderTypeAccess;
 import potionstudios.byg.mixin.client.access.AccessEntityRenderers;
 import potionstudios.byg.network.NetworkUtil;
 
@@ -28,7 +28,7 @@ public class BYGFabricClient implements ClientModInitializer {
 
         BYGClient.load();
         BYGClient.threadSafeLoad();
-        BYGRenderTypes.renderTypes(blockRenderTypeMap -> ItemBlockRenderTypeAccess.byg_getTYPE_BY_BLOCK().putAll(blockRenderTypeMap));
+        BYGRenderTypes.renderTypes(ItemBlockRenderTypes.TYPE_BY_BLOCK::putAll);
 
         BYGEntityRenderers.register(AccessEntityRenderers::byg_register);
 

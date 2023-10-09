@@ -1,6 +1,7 @@
 package potionstudios.byg;
 
 import corgitaco.corgilib.serialization.jankson.JanksonUtil;
+import net.minecraft.client.KeyMapping;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Block;
@@ -43,6 +44,7 @@ import static potionstudios.byg.common.entity.BYGEntities.PUMPKIN_WARDEN;
 public class BYGForge {
 
     public BYGForge() {
+        KeyMapping.ke
         BYG.INITIALIZED = true;
         final var modBus = FMLJavaModLoadingContext.get().getModEventBus();
 //        BYGCreativeTab.init(new CreativeModeTab("byg.byg") {

@@ -21,7 +21,6 @@ import org.apache.commons.lang3.mutable.MutableBoolean;
 import org.apache.commons.lang3.mutable.MutableObject;
 import potionstudios.byg.BYG;
 import potionstudios.byg.client.gui.biomepedia.widget.BiomeWidget;
-import potionstudios.byg.mixin.access.client.EditBoxAccess;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -115,7 +114,7 @@ public class BiomeListScreen extends AbstractBiomepediaScreen {
             search.active = this.search.active;
             search.visible = this.search.visible;
             search.setValue(this.search.getValue());
-            search.setTextColor(((EditBoxAccess) this.search).byg_getTextColor());
+            search.setTextColor(this.search.textColor);
             snapToFront.setValue(true);
         } else {
             search.active = false;

@@ -16,7 +16,6 @@ import org.jetbrains.annotations.NotNull;
 import potionstudios.byg.BYG;
 import potionstudios.byg.client.gui.biomepedia.widget.ScrollableText;
 import potionstudios.byg.client.gui.biomepedia.widget.WidgetList;
-import potionstudios.byg.mixin.access.client.ScreenAccess;
 import potionstudios.byg.util.ModPlatform;
 
 import java.net.URI;
@@ -111,7 +110,7 @@ public class BiomepediaHomeScreen extends AbstractBiomepediaScreen {
             this.minecraft.setScreen(new ConfirmLinkScreen(confirmed -> {
                 if (confirmed) {
                     try {
-                        ((ScreenAccess) this).byg_invokeOpenLink(new URI(url));
+                        this.openLink(new URI(url));
                         this.minecraft.setScreen(this);
                     } catch (URISyntaxException e) {
                         e.printStackTrace();

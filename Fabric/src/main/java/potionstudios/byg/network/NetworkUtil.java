@@ -13,7 +13,6 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.phys.Vec3;
 import potionstudios.byg.BYG;
 import potionstudios.byg.common.entity.boat.BYGBoat;
-import potionstudios.byg.mixin.access.client.ClientLevelAccess;
 
 import java.util.UUID;
 
@@ -87,8 +86,6 @@ public class NetworkUtil {
         entity.setXRot(pitch);
         entity.setYRot(yaw);
         entity.setDeltaMovement(velocityX, velocityY, velocityZ);
-        client.execute(() -> {
-            ((ClientLevelAccess) client.level).byg_invokeAddEntity(id, entity);
-        });
+        client.execute(() -> client.level.addEntity(id, entity));
     }
 }

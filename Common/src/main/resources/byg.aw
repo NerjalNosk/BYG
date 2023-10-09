@@ -30,3 +30,10 @@ Extendable method net/minecraft/world/level/biome/OverworldBiomeBuilder pickPeak
 Extendable method net/minecraft/world/level/biome/OverworldBiomeBuilder pickSlopeBiome (IILnet/minecraft/world/level/biome/Climate$Parameter;)Lnet/minecraft/resources/ResourceKey;
 
 Extendable class net/minecraft/world/level/biome/OverworldBiomeBuilder
+
+accessible method net/minecraft/client/multiplayer/ClientLevel addEntity (ILnet/minecraft/world/entity/Entity;)V
+accessible field net/minecraft/client/gui/components/EditBox textColor I
+accessible field net/minecraft/client/renderer/ItemBlockRenderTypes TYPE_BY_BLOCK Ljava/util/Map;
+accessible field net/minecraft/client/KeyMapping key Lcom/mojang/blaze3d/platform/InputConstants$Key;
+accessible method net/minecraft/client/gui/screens/MenuScreens register (Lnet/minecraft/world/inventory/MenuType;Lnet/minecraft/client/gui/screens/MenuScreens$ScreenConstructor;)V
+accessible method net/minecraft/client/gui/screens/Screen openLink (Ljava/net/URI;)V
