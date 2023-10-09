@@ -1,5 +1,12 @@
+import com.modrinth.minotaur.TaskModrinthUpload
+import net.darkhax.curseforgegradle.TaskPublishCurseForge
+import java.nio.charset.Charset
+import kotlin.io.path.readText
+
 plugins {
     id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("net.darkhax.curseforgegradle") version "1.1.16"
+    id("com.modrinth.minotaur") version "2.+"
 }
 
 architectury {
@@ -75,6 +82,44 @@ tasks {
         dependsOn(commonSources)
         from(commonSources.get().archiveFile.map { zipTree(it) })
     }
+
+    val changelogText = projectDir.toPath().parent.resolve("CHANGELOG.md").readText(Charset.defaultCharset())
+
+    val dependencyText = ""
+
+    create("fabic_publishCurseForge", TaskPublishCurseForge::class) {
+        dependsOn(build)
+        apiToken = System.getenv()["CURSEFORGE_TOKEN"]
+
+        val mainFile = upload(project.properties["forge_curseforge_id"], remapJar)
+        mainFile.changelog = dependencyText + changelogText
+        mainFile.changelogType = "markdown"
+        mainFile.releaseType = project.properties["release_type"]
+        mainFile.addRequirement("terrablender-forge")
+        mainFile.addRequirement("geckolib")
+        mainFile.addRequirement("corgilib")
+        mainFile.addGameVersion(minecraftVersion)
+        mainFile.addModLoader("forge")
+    }
+
+    create("forge_publishModrinth", TaskModrinthUpload::class) {
+        dependsOn(build)
+        modrinth {
+            token.set(System.getenv()["MODRINTH_KEY"])
+            projectId.set(project.properties["modrinth_id"] as String)
+            versionName.set(base.archivesName.get())
+            versionNumber.set(project.properties["version"] as String)
+            versionType.set(project.properties["release_type"] as String)
+            uploadFile.set(shadowJar)
+
+            val modrinthChangelogText = dependencyText + changelogText.substring(0, changelogText.indexOf("# 2", changelogText.indexOf("# 2") + 1)).trim()
+            changelog.set(modrinthChangelogText)
+
+            gameVersions.set(mutableListOf(minecraftVersion))
+            loaders.set(mutableListOf("forge"))
+        }
+    }
+
 }
 
 components {

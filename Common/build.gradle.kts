@@ -30,6 +30,8 @@ tasks.register("optimise", OptimisePNGTask::class) {
     option("i", 0)
 }
 
+tasks.register("prepareWorkspace")
+
 /*
 publishing {
     publications.create<MavenPublication>("mavenCommon") {
