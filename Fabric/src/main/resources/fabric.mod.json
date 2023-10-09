@@ -56,6 +56,5 @@
     "terrablender": ">=3.0.0.163",
     "corgilib": ">=4.0.0.0",
     "geckolib": ">=4.2.0"
-  },
-  "accessWidener": "byg.aw"
+  }
 }
