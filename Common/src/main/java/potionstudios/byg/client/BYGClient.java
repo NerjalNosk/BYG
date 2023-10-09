@@ -1,5 +1,6 @@
 package potionstudios.byg.client;
 
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
@@ -15,7 +16,6 @@ import potionstudios.byg.common.entity.boat.BYGBoat;
 import potionstudios.byg.common.entity.boat.BYGBoatRenderer;
 import potionstudios.byg.common.particles.FallingLeafParticle;
 import potionstudios.byg.common.particles.TheriumGlint;
-import potionstudios.byg.mixin.access.client.MenuScreensAccess;
 
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
@@ -30,7 +30,7 @@ public class BYGClient {
     }
 
     public static void threadSafeLoad() {
-        MenuScreensAccess.byg_register(BYGMenuTypes.HYPOGEAL_CONTAINER.get(), HypogealImperiumScreen::new);
+        MenuScreens.register(BYGMenuTypes.HYPOGEAL_CONTAINER.get(), HypogealImperiumScreen::new);
     }
 
     public static void registerParticles(ParticleStrategy strategy) {

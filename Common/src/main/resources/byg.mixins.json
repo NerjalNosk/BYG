@@ -94,12 +94,6 @@
     "server.MixinMinecraftServer"
   ],
   "client": [
-    "access.client.ClientLevelAccess",
-    "access.client.EditBoxAccess",
-    "access.client.ItemBlockRenderTypeAccess",
-    "access.client.KeyMappingAccess",
-    "access.client.MenuScreensAccess",
-    "access.client.ScreenAccess",
     "client.MixinDebugOverlayGui",
     "client.MixinOptionsScreen",
     "client.MixinSheets"
