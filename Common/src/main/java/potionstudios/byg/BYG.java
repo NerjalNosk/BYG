@@ -3,6 +3,7 @@ package potionstudios.byg;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+import com.google.gson.GsonBuilder;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
@@ -22,6 +23,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import potionstudios.byg.common.*;
 import potionstudios.byg.common.block.BYGBlocks;
+import potionstudios.byg.common.block.sapling.GrowingPatterns;
 import potionstudios.byg.common.entity.ai.village.poi.BYGPoiTypes;
 import potionstudios.byg.common.entity.villager.BYGVillagerType;
 import potionstudios.byg.common.world.structure.BYGStructureFeature;
@@ -71,6 +73,8 @@ public class BYG {
         }
 
         FileUtils.backUpDirectory(ModPlatform.INSTANCE.configPath(), "last_working_configs_backup");
+
+        LOGGER.warn("[DEBUG] loaded patterns: \n{}", new GsonBuilder().create().toJson(GrowingPatterns.DEFAULT.serialize()));
     }
 
     public static void attachCommands(final CommandDispatcher<CommandSourceStack> dispatcher, final Commands.CommandSelection environmentType) {

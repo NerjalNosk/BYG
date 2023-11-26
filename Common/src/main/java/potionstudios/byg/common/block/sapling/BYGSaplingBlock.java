@@ -10,6 +10,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import potionstudios.byg.BYG;
 import potionstudios.byg.util.FeatureGrowerFromBlockPattern;
 import potionstudios.byg.util.ModPlatform;
 
@@ -41,6 +42,7 @@ public class BYGSaplingBlock extends SaplingBlock implements FeatureGrowerFromBl
             if (!ModPlatform.INSTANCE.canTreeGrowWithEvent(world, rand, pos)) return;
             // accept vanilla method if no pattern was found
             if (!FeatureGrowerFromBlockPattern.growFeature(this, world, pos, rand, this.patternsToSpawner)) {
+                BYG.LOGGER.warn("[DEBUG] BYG sapling didn't grow");
                 super.advanceTree(world, pos, state, rand);
             }
         }

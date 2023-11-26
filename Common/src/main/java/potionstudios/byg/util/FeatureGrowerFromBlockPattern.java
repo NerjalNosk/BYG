@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import potionstudios.byg.BYG;
+import potionstudios.byg.common.block.sapling.BYGSaplingBlock;
 import potionstudios.byg.common.block.sapling.GrowingPatterns;
 
 import java.util.*;
@@ -89,6 +90,8 @@ public interface FeatureGrowerFromBlockPattern {
             for (int xMove = -range; xMove <= range; xMove++) {
                 for (int zMove = -range; zMove <= range; zMove++) {
                     boolean matchedPattern = true;
+                    BYG.LOGGER.warn("[DEBUG] found matching pattern for sapling {} at pos [x={}, y={}, z={}]",
+                            Registry.BLOCK.getKey(block), pos.getX(), pos.getY(), pos.getZ());
                     BlockPos.MutableBlockPos mutableBlockPos1 = new BlockPos.MutableBlockPos().set(mutableBlockPos.set(pos).move(xMove, 0, zMove));
 
 
@@ -137,10 +140,15 @@ public interface FeatureGrowerFromBlockPattern {
                                     BYG.LOGGER.error(String.format("Grower \"%s\" failed when attempting to spawn configured feature \"%s\" at position %s. \"%s\" is not a valid configured feature ID in this world's datapack configured feature registry! Valid entries:\n %s", Registry.BLOCK.getKey(block).toString(), featureSpawner, pos, featureSpawner, BYGUtil.dumpRegistry(configuredFeaturesRegistry)));
                                 }
                             }
+                            else BYG.LOGGER.warn("[DEBUG] Tree feature not found for sapling {}", Registry.BLOCK.getKey(block));
                         }
+                        else BYG.LOGGER.warn("[DEBUG] Tree feature registry access couldn't be accessed");
                     }
                 }
             }
+        }
+        if (block instanceof BYGSaplingBlock) {
+            BYG.LOGGER.warn("[DEBUG] BYG Sapling {} couldn't grow", Registry.BLOCK.getKey(block));
         }
         return false;
     }

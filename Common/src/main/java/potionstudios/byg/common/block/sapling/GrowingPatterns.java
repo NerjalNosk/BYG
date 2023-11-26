@@ -1,7 +1,12 @@
 package potionstudios.byg.common.block.sapling;
 
 import blue.endless.jankson.api.SyntaxError;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonPrimitive;
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.JsonOps;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
@@ -801,5 +806,20 @@ public record GrowingPatterns(boolean logGrowth, Map<ResourceLocation, List<Grow
         }
 
 
+    }
+
+    public JsonElement serialize() {
+        JsonObject o = new JsonObject();
+        o.add("logGrowth", new JsonPrimitive(logGrowth));
+        JsonObject patterns = new JsonObject();
+        for (Map.Entry<ResourceLocation, List<GrowingPatternEntry>> entry : patternsForBlock().entrySet()) {
+            JsonArray array = new JsonArray();
+            for (GrowingPatternEntry e : entry.getValue()) {
+                GrowingPatternEntry.CODEC.encode(e, JsonOps.INSTANCE, new JsonObject()).result().ifPresent(array::add);
+            }
+            patterns.add(entry.getKey().toString(), array);
+        }
+        o.add("patterns", patterns);
+        return o;
     }
 }
