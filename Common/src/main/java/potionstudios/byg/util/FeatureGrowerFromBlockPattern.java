@@ -87,13 +87,15 @@ public interface FeatureGrowerFromBlockPattern {
         int range = (GrowingPatterns.MAX_PATTERN_SIZE - 1) / 2;
         BlockPos.MutableBlockPos mutableBlockPos = new BlockPos.MutableBlockPos().set(pos);
         for (Pair<List<BlockPos>, SimpleWeightedRandomList<GrowingPatterns.FeatureSpawner>> entry : patternsToSpawner) {
+            BYG.LOGGER.warn("[DEBUG] growFeature loop #1");
             for (int xMove = -range; xMove <= range; xMove++) {
+                BYG.LOGGER.warn("[DEBUG] growFeature loop #2");
                 for (int zMove = -range; zMove <= range; zMove++) {
-                    boolean matchedPattern = true;
+                    BYG.LOGGER.warn("[DEBUG] growFeature loop #3");
                     BYG.LOGGER.warn("[DEBUG] found matching pattern for sapling {} at pos [x={}, y={}, z={}]",
                             Registry.BLOCK.getKey(block), pos.getX(), pos.getY(), pos.getZ());
+                    boolean matchedPattern = true;
                     BlockPos.MutableBlockPos mutableBlockPos1 = new BlockPos.MutableBlockPos().set(mutableBlockPos.set(pos).move(xMove, 0, zMove));
-
 
                     List<BlockPos> offsets = entry.getFirst();
                     SimpleWeightedRandomList<GrowingPatterns.FeatureSpawner> treePicker = entry.getSecond();
@@ -134,7 +136,7 @@ public interface FeatureGrowerFromBlockPattern {
                                     } else {
                                         if (GrowingPatterns.getConfig().logGrowth()) {
                                             BYG.LOGGER.info(String.format("Grower \"%s\" couldn't grow configured feature \"%s\" at position %s(growth offset: %s).", Registry.BLOCK.getKey(block).toString(), featureSpawner.toString(), growthPos, spawnOffset));
-                                        }
+                                        } else BYG.LOGGER.warn("[DEBUG] Weird?");
                                     }
                                 } else {
                                     BYG.LOGGER.error(String.format("Grower \"%s\" failed when attempting to spawn configured feature \"%s\" at position %s. \"%s\" is not a valid configured feature ID in this world's datapack configured feature registry! Valid entries:\n %s", Registry.BLOCK.getKey(block).toString(), featureSpawner, pos, featureSpawner, BYGUtil.dumpRegistry(configuredFeaturesRegistry)));
@@ -143,6 +145,8 @@ public interface FeatureGrowerFromBlockPattern {
                             else BYG.LOGGER.warn("[DEBUG] Tree feature not found for sapling {}", Registry.BLOCK.getKey(block));
                         }
                         else BYG.LOGGER.warn("[DEBUG] Tree feature registry access couldn't be accessed");
+                    } else {
+                        BYG.LOGGER.warn("[DEBUG] Not a recognised pattern");
                     }
                 }
             }

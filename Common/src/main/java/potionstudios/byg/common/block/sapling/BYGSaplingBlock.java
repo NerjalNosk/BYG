@@ -43,6 +43,26 @@ public class BYGSaplingBlock extends SaplingBlock implements FeatureGrowerFromBl
             // accept vanilla method if no pattern was found
             if (!FeatureGrowerFromBlockPattern.growFeature(this, world, pos, rand, this.patternsToSpawner)) {
                 BYG.LOGGER.warn("[DEBUG] BYG sapling didn't grow");
+                BYG.LOGGER.warn(
+                        String.format("%d: %s",
+                                this.patternsToSpawner.size(),
+                                String.join(
+                                        "%d: , ",
+                                        List.of(this.patternsToSpawner.stream().map(
+                                                pair -> String.format("%s - %s",
+                                                        pair.getFirst(),
+                                                        pair.getSecond().unwrap().stream().map(
+                                                                wrapper -> String.format(
+                                                                        "%s: %s",
+                                                                        wrapper.getWeight().asInt(),
+                                                                        wrapper.getData().spawnerID()
+                                                                )
+                                                        )
+                                                )
+                                        ).toArray(String[]::new))
+                                )
+                        )
+                );
                 super.advanceTree(world, pos, state, rand);
             }
         }
